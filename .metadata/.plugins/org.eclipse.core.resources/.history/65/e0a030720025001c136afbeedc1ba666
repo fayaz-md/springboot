@@ -1,0 +1,22 @@
+package com.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.bean.Employee;
+import com.service.EmployeeService;
+
+public class DemoTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ApplicationContext ac=new ClassPathXmlApplicationContext("beans.xml");
+		Employee e=(Employee)ac.getBean("employee");
+		e.setId(124);
+		e.setName("Ayesha");
+		e.setSalary(20000);
+		EmployeeService es=(EmployeeService)ac.getBean("employeeService");
+		System.out.println(es.storeEmployeeDetails(e));
+	}
+
+}

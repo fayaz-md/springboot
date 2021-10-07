@@ -1,0 +1,3 @@
+#Tomcat publish data
+#Tue Oct 05 13:25:49 UTC 2021
+org.eclipse.jst.j2ee.server\:/binary\:/home/mohammedfayazfi/.m2/repository/org/springframework/spring-web/5.2.12.RELEASE/spring-web-5.2.12.RELEASE.jar=WEB-INF/lib/spring-web-5.2.12.RELEASE.jar

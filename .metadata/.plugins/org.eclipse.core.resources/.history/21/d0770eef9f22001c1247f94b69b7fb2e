@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+<bean class="com.Employee" id="emp1" scope="prototype">
+</bean>
+<bean class="com.Employee" id="emp2" >
+<property name="id" value="100"></property>
+<property name="name" value="Fayaz"></property>
+<property name="salary" value="12000"></property>
+<property name="add" ref="add"></property>
+</bean>
+<bean class="com.Employee" id="emp3">
+<constructor-arg value="101"></constructor-arg>
+<constructor-arg value="Rehan"></constructor-arg>
+<constructor-arg value="15000"></constructor-arg>
+</bean>
+<bean id="add" class="com.Address">
+<property name="city" value="Ballari"></property>
+<property name="state" value="Karnataka"></property>
+</bean>
+</beans>

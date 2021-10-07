@@ -1,0 +1,31 @@
+package com.dao;
+
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.bean.Customer;
+
+@Repository
+public class CustomerDao {
+	@Autowired
+	EntityManagerFactory emf;
+	public int storeCustomer(Customer c)
+	{
+		EntityManager em=emf.createEntityManager();
+		
+		return 0;
+	}
+	public List<Customer> getCustomerDetails()
+	{
+		EntityManager em=emf.createEntityManager();
+		Query query=em.createQuery("select c from Customer c");
+		return query.getResultList();
+		
+	}
+}

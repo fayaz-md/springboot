@@ -1,0 +1,14 @@
+package com.dao;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class EmployeeDao {
+	@Autowired
+	DataSource ds;
+	public int storeEmployee()
+	{
+		
+	}
+}

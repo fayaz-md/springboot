@@ -1,0 +1,32 @@
+package com.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+
+import com.bean.Employee;
+@Repository
+public class EmployeeDao {
+	@Autowired
+	DataSource ds;
+	public int storeEmployee(Employee emp)
+	{
+		try {
+			Connection con=ds.getConnection();
+			PreparedStatement pstm=con.prepareStatement("insert into employee values(?,?,?)");
+			pstm.setInt(1, emp.getId());
+			pstm.setString(2, emp.getName());
+			pstm.setFloat(3, emp.getSalary());
+			return pstm.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e);
+		}
+		return 0;
+	}
+}

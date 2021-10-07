@@ -1,0 +1,28 @@
+class C implements Runnable
+{
+	public void run()
+	{
+		for(int i=1;i<=5;i++) {
+			System.out.println(i);
+		}
+	}
+}
+class D implements Runnable
+{
+	public void run()
+	{
+		for(int i=1;i<=5;i++) {
+			System.out.println(i);
+		}
+	}
+}
+public class InterfaceException {
+	public static void main(String args[]) {
+		Runnable a=new C();
+		Runnable b=new D();
+		Thread t1=new Thread(a);
+		Thread t2=new Thread(b);
+		t1.start();
+		t2.start();
+	}
+}
